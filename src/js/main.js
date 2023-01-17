@@ -26,17 +26,17 @@ async function getData() {
 
     if (isLive !== "none") {
       videoPlayer.style.display = "flex"
-      console.log("channel is live")
+      //console.log("channel is live")
       if (!playing) {
         timer.style.display = "none"
         player = YouTubePlayer("video-player")
         player.loadVideoById(videoID)
         playing = true
       } else {
-        console.log("playing")
+        //console.log("playing")
       }
     } else {
-      console.log("channel is not live")
+      //console.log("channel is not live")
     }
   } catch (error) {
     console.error(error)
