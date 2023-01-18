@@ -12,6 +12,8 @@ Counts from the last livestream, if finds live or scheduled stream - replaces wi
 
 Fetches from remote server with data from YouTube API https://developers.google.com/youtube/v3
 
+You can find Server repository [here](https://github.com/LizaSil/Sakamata-server)
+
 ## Happy Sakamata
 
 ![](https://media.tenor.com/gNfxApRNRhYAAAAM/sakamata-chloe-chloe.gif)
