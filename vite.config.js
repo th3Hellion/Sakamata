@@ -1,6 +1,6 @@
 export default {
   root: "src",
-  assetsDir: "./src/img",
+  assetsDir: "./src/img/",
   build: {
     base: "/Sakamata",
     outDir: "../dist",
