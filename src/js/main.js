@@ -12,6 +12,8 @@ let videoID
 let player
 let playing = false
 
+// Add style to body
+
 // Get the data from the server
 async function getData() {
   try {
@@ -44,8 +46,7 @@ async function getData() {
 }
 
 // Fetch the data on page load
-getData()
-
+Window.onload = getData()
 // Fetch the data every 10 seconds afterwards
 setInterval(getData, 10 * 1000)
 
