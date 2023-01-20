@@ -43,9 +43,9 @@ async function getData() {
 }
 
 // Fetch the data on page load
-Window.onload = getData()
+Window.onload = await getData()
 // Fetch the data every 10 seconds afterwards
-setInterval(getData, 10 * 1000)
+setInterval(await getData, 10 * 1000)
 
 // Update the timer
 setInterval(() => {
