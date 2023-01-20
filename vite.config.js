@@ -4,8 +4,10 @@ export default {
   build: {
     base: "/Sakamata",
     outDir: "../dist",
+    publicUrl: "./",
     emptyOutDir: true,
     target: "esnext",
     polyfillDynamicImport: false,
+    files: ["index.html", "js/**/*.js", "css/**/*.css"],
   },
 }
