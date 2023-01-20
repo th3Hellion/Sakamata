@@ -132,3 +132,38 @@ body::before {
     opacity: 1;
   }
 }
+
+/*IPhone scree*/
+
+@media screen and (max-width: 600px) {
+  .container {
+    margin-top: 2rem;
+  }
+  .timer {
+    margin-top: 5rem;
+    font-size: 2.5rem;
+    gap: 4rem;
+  }
+  .video-player {
+    height: 80vw;
+    width: 100vw;
+  }
+  .link img {
+    max-width: 8vw;
+    height: 8vw;
+  }
+  .days,
+  .hours,
+  .minutes,
+  .seconds {
+    margin: 0 0.5rem;
+  }
+  .chloe {
+    margin-top: 0.5rem;
+    padding: 0 0.5rem;
+    font-size: 1.5rem;
+  }
+  .chloe span {
+    display: none;
+  }
+}

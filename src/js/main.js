@@ -12,8 +12,6 @@ let videoID
 let player
 let playing = false
 
-// Add style to body
-
 // Get the data from the server
 async function getData() {
   try {
@@ -22,23 +20,22 @@ async function getData() {
       throw new Error(response.statusText)
     }
     const data = await response.json()
-    isLive = data.status
+    isLive = data.livestreamStatus
     lastBroadcast = new Date(data.updated)
     videoID = data.videoId
 
     if (isLive !== "none") {
       videoPlayer.style.display = "flex"
-      //console.log("channel is live")
+      console.log("channel is live")
       if (!playing) {
         timer.style.display = "none"
         player = YouTubePlayer("video-player")
         player.loadVideoById(videoID)
         playing = true
       } else {
-        //console.log("playing")
       }
     } else {
-      //console.log("channel is not live")
+      console.log("channel is not live")
     }
   } catch (error) {
     console.error(error)
