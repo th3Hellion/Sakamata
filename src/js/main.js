@@ -6,14 +6,15 @@ const videoPlayer = document.getElementById("video-player")
 const timer = document.getElementById("timer")
 videoPlayer.style.display = "none"
 
-let isLive = "none"
-let lastBroadcast
-let videoID
-let player
 let playing = false
+let lastBroadcast
 
 // Get the data from the server
 async function getData() {
+  let player
+  let isLive = "none"
+  let videoID
+
   try {
     const response = await fetch(URL)
     if (!response.ok) {
@@ -26,16 +27,16 @@ async function getData() {
 
     if (isLive !== "none") {
       videoPlayer.style.display = "flex"
-      console.log("channel is live")
       if (!playing) {
         timer.style.display = "none"
         player = YouTubePlayer("video-player")
         player.loadVideoById(videoID)
         playing = true
-      } else {
       }
     } else {
-      console.log("channel is not live")
+      videoPlayer.style.display = "none"
+      timer.style.display = "flex"
+      playing = false
     }
   } catch (error) {
     console.error(error)
@@ -43,14 +44,15 @@ async function getData() {
 }
 
 // Fetch the data on page load
-window.onload = await getData()
-// Fetch the data every 10 seconds afterwards
-setInterval(() => {
+document.addEventListener("DOMContentLoaded", function () {
   getData()
-}, 10 * 1000)
 
-// Update the timer
-setInterval(() => {
-  const currentTime = Date.now()
-  updateTimer(currentTime, lastBroadcast)
-}, 1000)
+  setInterval(() => {
+    getData()
+  }, 10 * 1000)
+
+  setInterval(() => {
+    const currentTime = Date.now()
+    updateTimer(currentTime, lastBroadcast)
+  }, 1000)
+})
