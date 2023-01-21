@@ -22,8 +22,10 @@ async function getData() {
     }
     const data = await response.json()
     isLive = data.livestreamStatus
-    lastBroadcast = new Date(data.updated)
     videoID = data.videoId
+    if (isLive !== "none") {
+      lastBroadcast = "Stream is Live"
+    } else lastBroadcast = new Date(data.updated)
 
     if (isLive !== "none") {
       videoPlayer.style.display = "flex"
@@ -46,12 +48,15 @@ async function getData() {
 // Fetch the data on page load
 document.addEventListener("DOMContentLoaded", function () {
   getData()
-
   setInterval(() => {
     getData()
   }, 10 * 1000)
 
   setInterval(() => {
+    // if lastbroadcast is string return
+    if (lastBroadcast === "Stream is Live") {
+      return
+    }
     const currentTime = Date.now()
     updateTimer(currentTime, lastBroadcast)
   }, 1000)
