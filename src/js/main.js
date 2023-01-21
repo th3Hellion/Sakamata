@@ -53,7 +53,6 @@ document.addEventListener("DOMContentLoaded", function () {
   }, 10 * 1000)
 
   setInterval(() => {
-    // if lastbroadcast is string return
     if (lastBroadcast === "Stream is Live") {
       return
     }

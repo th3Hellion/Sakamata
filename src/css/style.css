@@ -6,6 +6,7 @@ body {
   font-family: "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", Osaka, "メイリオ",
     Meiryo, "MS PGothic", sans-serif;
   background-repeat: no-repeat;
+  background-size: cover;
   background-position: center;
   background-attachment: fixed;
 }
@@ -20,10 +21,16 @@ body::before {
 }
 .container {
   display: flex;
+  flex-direction: column;
   margin-top: 5rem;
   justify-content: center;
   align-items: center;
-  flex-direction: column;
+}
+.video-player {
+  height: 80vh;
+  width: 80vw;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
 }
 .timer {
   display: flex;
@@ -35,9 +42,9 @@ body::before {
   font-size: 5rem;
   font-weight: 700;
   text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-  border: 2px solid #fff;
+  border: 2.5px solid #fff;
   border-radius: 10px;
-  padding: 1rem;
+  padding: 2rem;
   gap: 8rem;
 }
 .days,
@@ -55,11 +62,6 @@ body::before {
   font-weight: 400;
   text-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
 }
-.video-player {
-  display: flex;
-  height: 42vw;
-  width: 72vw;
-}
 .linkContainer {
   display: flex;
   gap: 10vw;
@@ -68,15 +70,9 @@ body::before {
   align-items: center;
   flex-direction: row;
 }
-.playerAndLink {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-}
 .link img {
-  max-width: 4vw;
-  height: 4vw;
+  max-width: 4.5vw;
+  height: 4.5vw;
   margin: 0 1rem;
   color: #fff;
   filter: grayscale() contrast(0.5);
@@ -91,7 +87,6 @@ body::before {
   justify-content: start;
   align-items: center;
   flex-direction: column;
-  margin-top: 1rem;
   position: absolute;
   left: 0;
   padding: 0 1rem;
@@ -99,7 +94,8 @@ body::before {
   cursor: default;
 }
 .chloe span {
-  font-size: 3.5rem;
+  font-size: 3.5vw;
+  margin-top: 10rem;
   font-weight: 600;
   background: linear-gradient(100deg, #af0f71, #5b021d);
   -webkit-background-clip: text;
