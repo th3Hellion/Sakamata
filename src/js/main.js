@@ -11,8 +11,8 @@ let lastBroadcast
 
 // Get the data from the server
 async function getData() {
-  let player
   let isLive = "none"
+  let player
   let videoID
 
   try {
@@ -23,11 +23,9 @@ async function getData() {
     const data = await response.json()
     isLive = data.livestreamStatus
     videoID = data.videoId
-    if (isLive !== "none") {
-      lastBroadcast = "Stream is Live"
-    } else lastBroadcast = new Date(data.updated)
 
     if (isLive !== "none") {
+      lastBroadcast = "Stream is Live"
       videoPlayer.style.display = "flex"
       if (!playing) {
         timer.style.display = "none"
@@ -36,7 +34,8 @@ async function getData() {
         playing = true
       }
     } else {
-      videoPlayer.style.display = "none"
+      lastBroadcast = new Date(data.updated)
+      document.getElementById("video-player").style.display = "none"
       timer.style.display = "flex"
       playing = false
     }
