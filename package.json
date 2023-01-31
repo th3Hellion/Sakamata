@@ -17,5 +17,8 @@
     "dotenv": "^16.0.3",
     "vite": "^4.0.4",
     "youtube-player": "^5.5.2"
+  },
+  "devDependencies": {
+    "eslint": "^8.32.0"
   }
 }

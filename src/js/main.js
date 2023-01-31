@@ -11,44 +11,46 @@ let lastBroadcast
 
 // Get the data from the server
 async function getData() {
-  let isLive = "none"
-  let player
-  let videoID
-
   try {
     const response = await fetch(URL)
     if (!response.ok) {
       throw new Error(response.statusText)
     }
     const data = await response.json()
-    isLive = data.livestreamStatus
-    videoID = data.videoId
-
-    if (isLive !== "none") {
-      lastBroadcast = "Stream is Live"
-      videoPlayer.style.display = "flex"
-      if (!playing) {
-        timer.style.display = "none"
-        player = YouTubePlayer("video-player")
-        player.loadVideoById(videoID)
-        playing = true
-      }
-    } else {
-      lastBroadcast = new Date(data.updated)
-      document.getElementById("video-player").style.display = "none"
-      timer.style.display = "flex"
-      playing = false
-    }
+    return data
   } catch (error) {
     console.error(error)
   }
 }
 
+async function getVideoStatus() {
+  const data = await getData()
+  let isLive = "none"
+  let player
+  let videoID
+
+  if (isLive !== "none") {
+    lastBroadcast = "Stream is Live"
+    videoPlayer.style.display = "flex"
+    if (!playing) {
+      timer.style.display = "none"
+      player = YouTubePlayer("video-player")
+      player.loadVideoById(videoID)
+      playing = true
+    }
+  } else {
+    lastBroadcast = new Date(data.updated)
+    document.getElementById("video-player").style.display = "none"
+    timer.style.display = "flex"
+    playing = false
+  }
+}
+
 // Fetch the data on page load
 document.addEventListener("DOMContentLoaded", function () {
-  getData()
+  getVideoStatus()
   setInterval(() => {
-    getData()
+    getVideoStatus()
   }, 10 * 1000)
 
   setInterval(() => {

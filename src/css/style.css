@@ -103,6 +103,7 @@ body::before {
   -webkit-text-fill-color: transparent;
   text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
 }
+
 @keyframes bounce {
   0% {
     transform: translateY(0);
@@ -110,6 +111,9 @@ body::before {
   100% {
     transform: translateY(-10px);
   }
+}
+.bounce {
+  animation: bounce 0.2s infinite alternate;
 }
 @keyframes fade {
   from {
@@ -122,17 +126,16 @@ body::before {
 
 @media only screen and (max-width: 768px) {
   .container {
+    margin: 0;
     flex-wrap: wrap;
   }
-  .timer,
-  .linkContainer {
-    width: 100%;
-    flex-direction: column;
-  }
   .timer {
-    margin-top: 0;
+    flex-direction: column;
+    margin: 1vw;
+    gap: 2rem;
     font-size: 3rem;
-    gap: 6rem;
+    width: auto;
+    border: none;
   }
 
   .video-player {
@@ -148,5 +151,6 @@ body::before {
   }
   body {
     background-position: 0 0;
+    overflow: hidden;
   }
 }
