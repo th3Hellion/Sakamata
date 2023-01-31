@@ -25,10 +25,11 @@ async function getData() {
 }
 
 async function getVideoStatus() {
+  let player
   const data = await getData()
   const videoID = data.videoID
-  let player
-  isLive = data.live
+  isLive = data.livestreamStatus
+  console.log(isLive)
 
   if (isLive !== "none") {
     lastBroadcast = "Stream is Live"
