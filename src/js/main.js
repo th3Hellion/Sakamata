@@ -8,6 +8,7 @@ videoPlayer.style.display = "none"
 
 let playing = false
 let lastBroadcast
+let isLive = "none"
 
 // Get the data from the server
 async function getData() {
@@ -25,9 +26,9 @@ async function getData() {
 
 async function getVideoStatus() {
   const data = await getData()
-  let isLive = "none"
+  const videoID = data.videoID
   let player
-  let videoID
+  isLive = data.live
 
   if (isLive !== "none") {
     lastBroadcast = "Stream is Live"
