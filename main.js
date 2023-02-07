@@ -1,7 +1,7 @@
 import { updateTimer } from "./modules/time.js"
 import YouTubePlayer from "youtube-player"
 
-const URL = "https://sakamata-api.onrender.com/livestream-status"
+const URL = "https://sakamata-go-api.onrender.com/"
 const videoPlayer = document.getElementById("video-player")
 const timer = document.getElementById("timer")
 videoPlayer.style.display = "none"
