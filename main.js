@@ -47,7 +47,6 @@ async function getVideoStatus() {
   }
 }
 
-// Fetch the data on page load
 document.addEventListener("DOMContentLoaded", function () {
   getVideoStatus()
   setInterval(() => {
