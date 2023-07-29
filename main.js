@@ -51,7 +51,7 @@ document.addEventListener("DOMContentLoaded", function () {
   getVideoStatus()
   setInterval(() => {
     getVideoStatus()
-  }, 10 * 1000)
+  }, 30 * 1000)
 
   setInterval(() => {
     if (lastBroadcast === "Stream is Live") {
