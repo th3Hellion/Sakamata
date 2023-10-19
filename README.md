@@ -2,7 +2,7 @@
 
 Hosted on Github Pages
 
-Check it out [here](https://lizasil.github.io/Sakamata/)
+Check it out [here](https://th3Hellion.github.io/Sakamata/)
 
 ## Timer
 
