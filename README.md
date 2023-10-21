@@ -6,13 +6,13 @@ Check it out [here](https://th3Hellion.github.io/Sakamata/)
 
 ## Timer
 
-Counts from the last livestream, if finds live or scheduled stream - replaces with YouTube player
+Counts from the last upload
 
 ## Data
 
 Fetches from remote server with data from YouTube API https://developers.google.com/youtube/v3
 
-You can find Server repository [here](https://github.com/LizaSil/Sakamata-server)
+You can find Server repository [here](https://github.com/th3Hellion/Sakamata-server)
 
 ## Happy Sakamata
 
