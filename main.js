@@ -1,4 +1,4 @@
-import { updateTimer } from "./modules/time.js"
+import { updateTimer } from "./modules/time.mjs"
 import YouTubePlayer from "youtube-player"
 
 const URL = "https://sakamata-go-api.onrender.com/"
