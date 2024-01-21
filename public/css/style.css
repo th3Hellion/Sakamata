@@ -6,7 +6,7 @@ body::before {
   position: absolute;
 }
 body {
-  background-image: url("./img/chloe-laying.webp");
+  background-image: url("/img/chloe-laying.webp");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
